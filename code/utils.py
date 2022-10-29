@@ -1,9 +1,12 @@
 import networkx as nx
+# function to get the order of vertices in RaRe using the PageRank algorithm
 def order(graph):
     rare = nx.pagerank(graph)
     o = list(k for k, v in sorted(rare.items(), key = lambda item:item[1],reverse=True))
     print(o)
 
+def density(graph):
+    return float(2 * nx.number_of_edges(graph) / nx.number_of_nodes(graph))
 
 g = nx.Graph()
 file = "././datasets/dblp/dblp.graph.small"
@@ -15,3 +18,4 @@ with open(file) as f:
     
 
 order(g)
+print(density(g))
