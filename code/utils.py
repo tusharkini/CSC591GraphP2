@@ -3,13 +3,17 @@ import networkx as nx
 def order(graph):
     rare = nx.pagerank(graph)
     o = list(k for k, v in sorted(rare.items(), key = lambda item:item[1],reverse=True))
-    print(o)
+    return o
+    #print(o)
 
 def density(graph):
-    return float(2 * nx.number_of_edges(graph) / nx.number_of_nodes(graph))
+    if nx.number_of_nodes(graph) == 0:
+        return 0
+    else:
+        return float(2 * nx.number_of_edges(graph) / nx.number_of_nodes(graph))
 
 g = nx.Graph()
-file = "././datasets/dblp/dblp.graph.small"
+'''file = "././datasets/dblp/dblp.graph.small"
 with open(file) as f:
     next(f)
     for line in f:
@@ -18,4 +22,4 @@ with open(file) as f:
     
 
 order(g)
-print(density(g))
+print(density(g))'''

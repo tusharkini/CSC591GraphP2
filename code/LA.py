@@ -4,6 +4,7 @@ import networkx as nx
 def function_LA(graph):
     clusters = []
     ordered_vertices = order(graph)
+    #print(ordered_vertices,"ewjnfkjfnekfnfkf")
     for vertex in ordered_vertices:
         added = False
         # Iterate through all existing clusters to see if adding vertex increases density or not 
