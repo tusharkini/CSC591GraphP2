@@ -76,7 +76,7 @@ report which size you used for each graph.
     $ python main.py ../datasets/dblp/dblp.graph.small dblp_small
 
     ```
-    This will create an output file in `results/dblp_small_output.txt`
+    This will create an output file named `results/dblp_small_output.txt`
 ### Running the Metrics Code
 - Run th emetrcis code using-
     ```bash
@@ -89,16 +89,8 @@ report which size you used for each graph.
     $ $ python ../metrics_code/metrics.py ../datasets/dblp/dblp.graph.small ../datasets/dblp/dblp.comm.small ../results/dblp_small_output.txt  dblp_small
 
     ```
-    This will create an output file in `results/dblp_small.pmetrics.csv` and `results/dblp.small.pmetrics.csv`
+    This will create output files named `results/dblp_small.pmetrics.csv` and `results/dblp.small.pmetrics.csv`
 
-### Running Tests
-
-- Test all the test files in the project directory using
-    ```bash
-    $ node server.js
-    $ npm test
-    ```
-    
 
 ---
 
