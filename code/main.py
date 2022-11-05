@@ -3,11 +3,12 @@ from IS2 import function_IS2 as IS2
 import sys
 import networkx as nx
 
-def main(file):
-    #file = sys.argv[1] 
+def main():
+    file_in = sys.argv[1] 
+    file_out = sys.argv[2]
     # create networkx graph from the file path
     graph = nx.Graph()
-    with open(file) as f:
+    with open(file_in) as f:
         next(f)
         for line in f:
             line = line.split()
@@ -30,12 +31,12 @@ def main(file):
             final_clusters.append(cluster)'''
     final_clusters = [list(x) for x in set(tuple(x) for x in computed_clusters)]
     print(len(final_clusters))
-    with open("output.txt", 'w') as f:
+    with open("../results/"+file_out+"_output.txt", 'w') as f:
         for fwd in final_clusters:
             line = " ".join(map(str, fwd))
             f.write(line + '\n')
 
 
 if __name__ == "__main__":
-    file = '././datasets'
-    main(file)
+    #file = '../datasets/amazon/amazon.graph.small'
+    main()
