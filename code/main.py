@@ -4,9 +4,11 @@ import sys
 import networkx as nx
 
 def main():
+    # file_in is 1st agrument having location of dataset
     file_in = sys.argv[1] 
+    # file_out is the name to be appended to result file
     file_out = sys.argv[2]
-    # create networkx graph from the file path
+    # create networkx graph from the file path given 
     graph = nx.Graph()
     with open(file_in) as f:
         next(f)
@@ -23,14 +25,10 @@ def main():
     # there might be duplicate clusters due to the nature of the algorithm
     # also the position of elements in the cluster might be different depending on order of addition
     # so get the unique clusters and store them in the file
-    print(len(computed_clusters))
-    '''final_clusters = []
-    for cluster in computed_clusters:
-        cluster = sorted(cluster)
-        if cluster not in final_clusters:
-            final_clusters.append(cluster)'''
+    # print(len(computed_clusters))
     final_clusters = [list(x) for x in set(tuple(x) for x in computed_clusters)]
     print(len(final_clusters))
+    # create file path to store output and write in it
     with open("../results/"+file_out+"_output.txt", 'w') as f:
         for fwd in final_clusters:
             line = " ".join(map(str, fwd))

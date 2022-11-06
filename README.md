@@ -78,7 +78,7 @@ report which size you used for each graph.
     ```
     This will create an output file named `results/dblp_small_output.txt`
 ### Running the Metrics Code
-- Run th emetrcis code using-
+- Run the metrcis code using-
     ```bash
     $ cd results
     $ python ../metrics_code/metrics.py <path_to_graph_file> <path_to_ground_truth_file> <path_to_output_file> <prefix_to_output_file>
@@ -101,7 +101,7 @@ report which size you used for each graph.
 
 ---
 
-## Technical Stack
+## Tech Stack
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 

@@ -6,20 +6,10 @@ def order(graph):
     return o
     #print(o)
 
+# utility function to calculate the density of the cluster
 def density(graph):
     if nx.number_of_nodes(graph) == 0:
         return 0
     else:
         return float(2 * nx.number_of_edges(graph) / nx.number_of_nodes(graph))
 
-g = nx.Graph()
-'''file = "././datasets/dblp/dblp.graph.small"
-with open(file) as f:
-    next(f)
-    for line in f:
-        line = line.split()
-        g.add_edge(int(line[0]),int(line[1]))
-    
-
-order(g)
-print(density(g))'''
